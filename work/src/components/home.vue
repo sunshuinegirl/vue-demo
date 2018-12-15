@@ -79,6 +79,7 @@ import containerone from '@/components/pages/homepart/containerone'
 import catedetail from '@/components/pages/homepart/catedetail'
 import catepiclay from '@/components/pages/homepart/vatepiclay'
 import foot from '@/components/common/foot'
+import {mapMutations} from 'vuex';
 export default {
     name:'home',
     components:{
@@ -164,6 +165,14 @@ export default {
                     ]
                 }
            }
+        }
+    },
+    computed:{
+        ...mapMutations(['judgeLogin'])
+    },
+    watch:{
+        judgeLogin:function(){
+            console.log(1);
         }
     }
 }

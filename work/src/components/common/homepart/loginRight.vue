@@ -6,7 +6,7 @@
             <div class="useDay">{{userDay}}</div>
             <div class="userOpr">
                 <div class="no-login ">
-                    <el-button type="primary" size="mini">登录</el-button>
+                    <el-button type="primary" size="mini" @click="toLogin()">登录</el-button>
                     <el-button type="primary" size="mini">注册</el-button>
                 </div>
                 <div class="has-login hide">
@@ -137,6 +137,7 @@
 </template>
 
 <script>
+import {mapState,mapMutations} from 'vuex';
 export default {
     name:'loginright',
     data(){
@@ -144,11 +145,6 @@ export default {
             userPic:'../../../static/img/login/hello.png',
             userHello:'',
             userDay:'',
-            userData:{
-                commont:1,
-                store:2,
-                group:0
-            },
             hideData:{
                 rehide:true,
                 viphide:false,
@@ -157,6 +153,12 @@ export default {
         }
     },
     methods:{
+        ...mapMutations(['judgeLogin']),
+        toLogin(){
+            this.$router.push({
+                path: '/login'
+            })
+        },
         sayHello(){
             let now = new Date();
             let hour = now.getHours();
@@ -188,9 +190,12 @@ export default {
             }
         }
     },
+    computed:{
+        ...mapState(['userData','isLogin'])
+    },
     mounted:function(){
-        this.sayHello()
-        
+        this.sayHello();
+        this.judgeLogin();
     }
 }
 </script>
@@ -258,6 +263,12 @@ export default {
         border-right: 1px solid #ccc;
         top: -25px;
         right: -25px;
+    }
+    .loginright .userOpr .has-login .log-detail:last-child:after{
+        display: none;
+    }
+    .loginright .userOpr .has-login .log-detail:last-child{
+        top: -12px
     }
     .loginright .userOpr .has-login .log-detail .info{
         color: #999;

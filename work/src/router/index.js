@@ -6,7 +6,7 @@ import login from '@/components/pages/login'//登陆页面
 
 Vue.use(Router)
 
-export default new Router({
+let router =  new Router({
   mode:'history',
   routes: [
     {
@@ -21,3 +21,13 @@ export default new Router({
     }
   ]
 })
+
+
+router.beforeEach((to,from,next)=>{
+  console.log('to:'+to.path);
+  if(to.path === '/' || to.path === '/login'){
+    next()
+  }
+})
+
+export default router
