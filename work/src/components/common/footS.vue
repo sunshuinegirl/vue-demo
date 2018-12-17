@@ -41,30 +41,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
     .foot-container{
         width: 1190px;
         margin: 10px auto 0;
         padding: 30px 0;
-    }
-    .foot-container .links,.right{
-        color: #8c8c8c;
-        text-align:center;
-        font-size:12px;
-        margin-bottom: 10px;
-    }
-    .foot-container .links .el-button{
-        color: #8c8c8c;
-        margin: 0 7px;
-    }
-    .foot-container .links .el-button:hover{
-        color:#409EFF;
-    }
-    .foot-container .right .el-button{
-        color: #8c8c8c;
-        margin: 0 7px;
-    }
-    .foot-container .right .el-button:hover{
-        color:#409EFF;
+        .links,.right{
+            color: #8c8c8c;
+            text-align:center;
+            font-size:12px;
+            margin-bottom: 10px;
+            .el-button{
+                color: #8c8c8c;
+                margin: 0 7px;
+                &:hover{
+                    color:#409EFF;
+                }
+            }
+        }
     }
 </style>

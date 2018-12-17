@@ -54,75 +54,76 @@ export default {
     computed:mapState(['cityName','searchValue'])
 }
 </script>
-<style>
+
+<style lang="less" scoped>
     .search-out{
         background-color: #fff;
         width: 100%;
         min-width: 1190px;
-    }
-    .search-container{
-        width: 1190px;
-        margin: 0 auto;
-        padding: 20px 0 5px;
-    }
-    .search-container .logoImg{
-        float: left;
-    }
-    .search-container.clearfix{
-        display: block;
-        clear: both;
-        overflow: hidden;
-    }
-    .search-container .city .iconfont{
-        color: #409EFF;
-    }
-    .search-container .city{
-        float: left;
-        position: relative;
-        font-size: 15px;
-        line-height: 42px;
-        padding: 0 10px;
-        margin: 0 0 0 25px;
-        z-index: 110;
-        vertical-align: middle;
-    }
-    .search-container .city::before{
-        content: "|";
-        position: absolute;
-        left: -10px;
-        color: #e1e1e1;
-    }
-    .search-container .searchBox{
-        position: relative;
-        float: left;
-        margin-left: 85px;
-        height: 75px;
-    }
-    .search-container .searchBox input.el-input__inner{
-        float: left;
-        width: 380px;
-        border: 2px solid #409EFF;
-        font-size: 12px;
-    }
-    .search-container .searchBox .search{
-        background-color: #409EFF;
-        color: #fff;
-        width: 100px;
-        border-radius: 0;
-        height: 37px;
-    }
-    .search-container .searchBox .hotSearch{
-        font-size: 12px;
-        overflow: hidden;
-    }
-    .search-container .searchBox .hotSearch .hotTips{
-        color: #ccc
-    }
-    .search-container .searchBox .hotSearch .el-button{
-        margin-right: 10px;
-        color: #999
-    }
-    .search-container .searchBox .hotSearch .el-button:hover{
-        color: #409EFF
+        .search-container{
+            width: 1190px;
+            margin: 0 auto;
+            padding: 20px 0 5px;
+            .logoImg{
+                float: left;
+            }
+            .city{
+                float: left;
+                position: relative;
+                font-size: 15px;
+                line-height: 42px;
+                padding: 0 10px;
+                margin: 0 0 0 25px;
+                z-index: 110;
+                vertical-align: middle;
+                .iconfont{
+                    color: #409EFF;
+                }
+                &::before{
+                    content: "|";
+                    position: absolute;
+                    left: -10px;
+                    color: #e1e1e1;
+                }
+            }
+            .searchBox{
+                position: relative;
+                float: left;
+                margin-left: 85px;
+                height: 75px;
+                input.el-input__inner{
+                    float: left;
+                    width: 380px;
+                    border: 2px solid #409EFF;
+                    font-size: 12px;
+                }
+                .search{
+                    background-color: #409EFF;
+                    color: #fff;
+                    width: 100px;
+                    border-radius: 0;
+                    height: 37px;
+                }
+                .hotSearch{
+                    font-size: 12px;
+                    overflow: hidden;
+                    .hotTips{
+                        color: #ccc
+                    }
+                    .el-button{
+                        margin-right: 10px;
+                        color: #999;
+                        &:hover{
+                            color: #409EFF
+                        }
+                    }
+                }
+            }
+        }
+        .clearfix{
+            display: block;
+            clear: both;
+            overflow: hidden;
+        }
     }
 </style>

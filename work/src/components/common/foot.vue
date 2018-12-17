@@ -55,62 +55,61 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
     .foot-container{
         width: 100%;
         min-width: 1190px;
         background: #f0f0f0;
         font-size: 12px;
-        margin-top: 20px
-    }
-    .index-foot{
-        width: 1190px;
-        margin: 0 auto;
-        padding: 30px 0;
-    }
-    .index-foot .foot-links{
-        padding: 20px 0 15px 15px;
-        border-bottom: 1px solid #e3e3e3;
-        display: flex;
-    }
-    .index-foot .foot-links .links-item{
-        width: 27%;
-        display: inline-block;
-    }
-    .index-foot .foot-links .links-item .link-title{
-        font-size: 15px;
-        line-height: 20px;
-        font-weight: 700;
-    }
-    .index-foot .foot-links .links-item .link-panel{
-        margin-top: 10px;
-    }
-    .index-foot .foot-links .links-item .link-panel .link-li{
-        line-height: 15px;
-    }
-    .index-foot .foot-links .links-item .link-panel .el-button{
-        color: #777;
-        font-size: 12px;
-    }
-    .index-foot .foot-links .links-item .link-panel .el-button:hover{
-        color: #409EFF;
-    }
-    .foot-container ul{
-        list-style: none
-    }
-    .index-foot .footer-declare{
         margin-top: 20px;
-        text-align: center;
-        color: #999;
-    }
-    .index-foot .footer-declare .company-desc{
-        height: 35px;
-        line-height: 35px;
-    }
-    .index-foot .footer-declare .company-desc .el-button{
-        color: #999;
-    }
-    .index-foot .footer-declare .company-desc .el-button:hover{
-        color: #409EFF;
+        .index-foot{
+            width: 1190px;
+            margin: 0 auto;
+            padding: 30px 0;
+            .foot-links{
+                padding: 20px 0 15px 15px;
+                border-bottom: 1px solid #e3e3e3;
+                display: flex;
+                .links-item{
+                    width: 27%;
+                    display: inline-block;
+                    .link-title{
+                        font-size: 15px;
+                        line-height: 20px;
+                        font-weight: 700;
+                    }
+                    .link-panel{
+                        margin-top: 10px;
+                        list-style: none;
+                        .link-li{
+                            line-height: 15px;
+                        }
+                        .el-button{
+                            color: #777;
+                            font-size: 12px;
+                            &:hover{
+                                color: #409EFF;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-declare{
+                margin-top: 20px;
+                text-align: center;
+                color: #999;
+                .company-desc{
+                    height: 35px;
+                    line-height: 35px;
+                    .el-button{
+                        color: #999;
+                        &:hover{
+                            color: #409EFF;
+                        }
+                    }
+                }
+            }
+        }
     }
 </style>
+

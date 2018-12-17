@@ -29,23 +29,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
     .containerone{
         width: 1190px;
         margin: 0 auto;
+        .item{
+            float: left;
+        }
+        .center,.right{
+            position: relative;
+            margin-top: 10px;
+            display: block;
+            margin-left: 10px;
+        }
     }
     .clearfix{
         clear: both;
     }
-    .containerone .item{
-        float: left;
-        
-    }
-    .containerone .center,.right{
-        position: relative;
-        margin-top: 10px;
-        display: block;
-        margin-left: 10px;
-    }
-    
 </style>

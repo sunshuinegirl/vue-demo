@@ -1,9 +1,9 @@
 <template>
     <div class="loginright">
         <div class="userlogin">
-            <div class="userPic"><img :src="userPic" /></div>
+            <div class="userPic"><img :src="userData.userPic" /></div>
             <div class="userHello">{{ userHello }}</div>
-            <div class="useDay">{{userDay}}</div>
+            <div class="useDay">{{userData.userDay}}</div>
             <div class="userOpr">
                 <div class="no-login ">
                     <el-button type="primary" size="mini" @click="toLogin()">登录</el-button>
@@ -69,7 +69,7 @@
                 <div class="vip-star">
                     <div class="vip-item">
                         <span class="vip-pic">
-                            <img :src="userPic"/>
+                            <img :src="userData.userPic"/>
                         </span>
                         <div class="vip-detail">
                             <span class="vip-name">卡佩落</span>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="vip-item">
                         <span class="vip-pic">
-                            <img :src="userPic"/>
+                            <img :src="userData.userPic"/>
                         </span>
                         <div class="vip-detail">
                             <span class="vip-name">卡佩落</span>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="vip-item">
                         <span class="vip-pic">
-                            <img :src="userPic"/>
+                            <img :src="userData.userPic"/>
                         </span>
                         <div class="vip-detail">
                             <span class="vip-name">卡佩落</span>
@@ -105,7 +105,7 @@
                     </div>
                     <div class="vip-item">
                         <span class="vip-pic">
-                            <img :src="userPic"/>
+                            <img :src="userData.userPic"/>
                         </span>
                         <div class="vip-detail">
                             <span class="vip-name">卡佩落</span>
@@ -121,7 +121,7 @@
                 <div class="vip-star">
                     <div class="vip-item">
                         <span class="vip-pic">
-                            <img :src="userPic"/>
+                            <img :src="userData.userPic"/>
                         </span>
                         <div class="vip-detail">
                             <span class="vip-name">家居装修</span>
@@ -142,9 +142,7 @@ export default {
     name:'loginright',
     data(){
         return{
-            userPic:'../../../static/img/login/hello.png',
             userHello:'',
-            userDay:'',
             hideData:{
                 rehide:true,
                 viphide:false,
@@ -172,7 +170,6 @@ export default {
             else if(hour < 22){helloWord = 'Hi，晚上好！'}
             else{helloWord = 'Hi，夜里好！'}
             this.userHello = helloWord;
-            this.userDay = '登录大众点评，发现品质生活';
         },
         currentInfo(item){
             if(item === 're'){
@@ -191,7 +188,7 @@ export default {
         }
     },
     computed:{
-        ...mapState(['userData','isLogin'])
+        ...mapState(['userData'])
     },
     mounted:function(){
         this.sayHello();
@@ -200,7 +197,8 @@ export default {
 }
 </script>
 
-<style scoped>
+
+<style lang="less" scoped>
     .hide{
         display: none;
     }
@@ -209,174 +207,173 @@ export default {
         height: 518px;
         background: #fff;
         padding: 0 15px;
-    }
-    .loginright .userlogin{
-        border-bottom: 1px dashed #eee;
-        height: 165px;
-        padding-top:16px; 
-    }
-    .loginright .userlogin .userPic{
-        width: 60px;
-        height: 60px;
-        margin: 0 auto;
-    }
-    .loginright .userlogin .userPic img{
-        width: 100%;
-        height: 100%;
-    }
-    .loginright .userlogin .userHello{
-        text-align: center;
-        color: #333;
-        font-size: 12px;
-        height: 14px;
-        line-height: 14px;
-        max-width: 180px;
-        white-space: nowrap;
-        margin-top: 7px;
-    }
-    .loginright .userlogin .useDay{
-        text-align: center;
-        margin: 4px auto 0;
-        color: #999;
-        height: 14px;
-        line-height: 14px;
-        font-size: 12px;
-    }
-    .loginright .userOpr{
-        text-align: center;
-        margin: 5px auto 16px;
-    }
-    .loginright .userOpr .no-login,.has-login{
-        padding-top: 5px;
-    }
-    .loginright .userOpr .has-login .log-detail{
-        display: inline-block;
-        cursor: pointer;
-        font-size: 12px;
-        width: 48px;
-        position: relative;
-    }
-    .loginright .userOpr .has-login .log-detail:after{
-        content: '';
-        position: relative;
-        width: 0px;
-        border-right: 1px solid #ccc;
-        top: -25px;
-        right: -25px;
-    }
-    .loginright .userOpr .has-login .log-detail:last-child:after{
-        display: none;
-    }
-    .loginright .userOpr .has-login .log-detail:last-child{
-        top: -12px
-    }
-    .loginright .userOpr .has-login .log-detail .info{
-        color: #999;
-        height: 12px;
-        line-height: 12px;
-    }
-    .loginright .userOpr .has-login .log-detail .info-count{
-        color: #333;
-        height: 12px;
-        line-height: 12px;
-        margin-top: 5px;
-    }
-
-    .loginright .vip-info{
-        width: 160px;
-        background: #fff;
-        height: 250px;
-        padding-top: 18px;
-        padding-bottom: 18px;
-    }
-    .loginright .vip-info .vip-info-title{
-        text-align: center;
-        margin-bottom: 18px;
-        height: 49px;
-    }
-    .loginright .vip-info .vip-info-title .list-title{
-        display: inline-block;
-        color: #777;
-        font-size: 12px;
-        cursor: pointer;
-        width: 48px;
-        height: 47px;
-    }
-    .loginright .vip-info .vip-info-title .list-title .iconfont{
-        font-size: 24px;
-        margin: 0 auto;
-        color: #777;
-    }
-    .loginright .vip-info .vip-info-title .list-title .vip-name{
-        padding-bottom: 5px;
-        display: inline-block;
-    }
-    .loginright .vip-info .vip-info-title .list-title .current .iconfont{
-        color: #409EFF;
-    }
-    .loginright .vip-info .vip-info-title .list-title .current .vip-name{
-        color: #409EFF;
-        border-bottom: 2px solid #409EFF;
-    }
-    .loginright .vip-info .hot-post .el-button{
-        font-size: 12px;
-        width: 100%;
-        height: 13px;
-        line-height: 13px;
-        overflow: hidden;
-        margin: 0 auto;
-        color: #999;
-    }
-    .loginright .vip-info .hot-post .el-button:hover{
-        color: #409EFF;
-    }
-    .loginright .vip-info .vip-star .vip-item{
-        height: 34px;
-        margin-bottom: 18px;
-        position: relative;
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-pic{
-        width: 34px;
-        height: 34px;
-        display: inline-block;
-        position: absolute;
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-pic img{
-        width: 100%;
-        height: 100%
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-detail{
-        font-size: 12px;
-        margin-left: 41px;
-        height: 34px;
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-detail .vip-name{
-        color: #333;
-        display: inline-block;
-        height: 17px;
-        line-height: 17px
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-detail .fans{
-        font-size: 12px;
-        color: #999;
-        height: 17px;
-        line-height: 17px;
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-detail .fans .comment,.fen{
-        height: 12px;
-        line-height: 12px;
-        border-right: 1px solid #ccc;
-        padding-right: 4px;
-        display: inline-block;
-        vertical-align: middle
-    }
-    .loginright .vip-info .vip-star .vip-item .vip-detail .fans .fen{
-        height: 12px;
-        line-height: 12px;
-        border-right: none;
-        padding-right: 4px;
-        display: inline-block;
-        vertical-align: middle
+        .userlogin{
+            border-bottom: 1px dashed #eee;
+            height: 165px;
+            padding-top:16px; 
+            .userPic{
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .userHello{
+                text-align: center;
+                color: #333;
+                font-size: 12px;
+                height: 14px;
+                line-height: 14px;
+                max-width: 180px;
+                white-space: nowrap;
+                margin-top: 7px;
+            }
+            .useDay{
+                text-align: center;
+                margin: 4px auto 0;
+                color: #999;
+                height: 14px;
+                line-height: 14px;
+                font-size: 12px;
+            }
+            .userOpr{
+                text-align: center;
+                margin: 5px auto 16px;
+                .no-login,.has-login{
+                    padding-top: 5px;
+                    .log-detail{
+                        display: inline-block;
+                        cursor: pointer;
+                        font-size: 12px;
+                        width: 48px;
+                        position: relative;
+                        &:after{
+                            content: '';
+                            position: relative;
+                            width: 0px;
+                            border-right: 1px solid #ccc;
+                            top: -25px;
+                            right: -25px;
+                        }
+                        &:last-child{
+                            top: -12px
+                        }
+                        &:last-child:after{
+                            display: none;
+                        }
+                        .info{
+                            color: #999;
+                            height: 12px;
+                            line-height: 12px;
+                        }
+                        .info-count{
+                            color: #333;
+                            height: 12px;
+                            line-height: 12px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .vip-info{
+            width: 160px;
+            background: #fff;
+            height: 250px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            .vip-info-title{
+                text-align: center;
+                margin-bottom: 18px;
+                height: 49px;
+                .list-title{
+                    display: inline-block;
+                    color: #777;
+                    font-size: 12px;
+                    cursor: pointer;
+                    width: 48px;
+                    height: 47px;
+                    .iconfont{
+                        font-size: 24px;
+                        margin: 0 auto;
+                        color: #777;
+                    }
+                    .vip-name{
+                        padding-bottom: 5px;
+                        display: inline-block;
+                    }
+                    .current{
+                        .iconfont{
+                            color: #409EFF;
+                        }
+                        .vip-name{
+                            color: #409EFF;
+                            border-bottom: 2px solid #409EFF;
+                        }
+                    }
+                }
+            }
+            .hot-post{
+                .el-button{
+                    font-size: 12px;
+                    width: 100%;
+                    height: 13px;
+                    line-height: 13px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    color: #999;
+                    &:hover{
+                        color: #409EFF;
+                    }
+                }
+            }
+            .vip-star{
+                .vip-item{
+                    height: 34px;
+                    margin-bottom: 18px;
+                    position: relative;
+                    .vip-pic{
+                        width: 34px;
+                        height: 34px;
+                        display: inline-block;
+                        position: absolute;
+                        img{
+                            width: 100%;
+                            height: 100%
+                        }
+                    }
+                    .vip-detail{
+                        font-size: 12px;
+                        margin-left: 41px;
+                        height: 34px;
+                        .vip-name{
+                            color: #333;
+                            display: inline-block;
+                            height: 17px;
+                            line-height: 17px
+                        }
+                        .fans{
+                            font-size: 12px;
+                            color: #999;
+                            height: 17px;
+                            line-height: 17px;
+                            .fen{
+                                border-right: none;
+                            }
+                            .comment,.fen{
+                                height: 12px;
+                                line-height: 12px;
+                                border-right: 1px solid #ccc;
+                                padding-right: 4px;
+                                display: inline-block;
+                                vertical-align: middle
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 </style>
-

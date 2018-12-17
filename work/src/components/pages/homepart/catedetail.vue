@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
     .isHide{
         display: none;
     }
@@ -43,9 +43,8 @@ export default {
         width: 590px;
         display: inline-block;
         margin-top: 10px;
-    }
-    .lifecontainer .cate-con{
-        padding: 0 10px 10px;
+        .cate-con{
+            padding: 0 10px 10px;
+        }
     }
 </style>
-

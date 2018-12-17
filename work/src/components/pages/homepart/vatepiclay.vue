@@ -40,37 +40,35 @@ export default {
 }
 </script>
 
-<style scoped>
+
+<style lang="less" scoped>
     .piclay{
         width: 100%;
         margin-top: 29px;
         background-color: #fff;
-    }
-    .piclay .wedding-title{
-        margin-bottom: 20px;
-    }
-    .piclay .pic-con{
-        padding: 0 20px 20px;
-    }
-    .piclay .pic-con .cate-pic-pure{
-        display: inline-block;
-    }
-    .piclay .pic-con .pic{
-        width: 370px;
-        height: 436px;
-        margin-right: 15px;
-    }
-    .piclay .pic-con .pic:last-child{
-        margin-right:0
-    }
-    .piclay .pic-con .pic .pic-sub{
-        width: 370px;
-        height: 208px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .piclay .pic-con .pic .pic-sub:last-child{
-        margin-bottom: 0
+        .wedding-title{
+            margin-bottom: 20px;
+        }
+        .pic-con{
+            padding: 0 20px 20px;
+            .cate-pic-pure{
+                display: inline-block;
+                width: 370px;
+                height: 436px;
+                margin-right: 15px;
+                &:last-child{
+                    margin-right:0
+                }
+                .pic-sub{
+                    width: 370px;
+                    height: 208px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    &:last-child{
+                        margin-bottom: 0
+                    }
+                }
+            }
+        }
     }
 </style>
-

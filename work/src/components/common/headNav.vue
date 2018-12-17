@@ -29,44 +29,45 @@ export default {
 }
 </script>
 
-<style scoped>
+
+<style lang="less" scoped>
     .cateContainer{
         width: 100%;
         min-width: 1190px;
         height: 35px;
         background-color: #fff; 
-    }
-    .head{
-        width: 1190px;
-        margin: 0 auto;
-        height: 35px;
-        line-height: 35px;
-    }
-    .head .allCate{
-        display: inline-block;
-        box-sizing: border-box;
-        width: 210px;
-        color: #fff;
-        background-color: #409EFF;
-        padding-left: 15px;
-        font-size: 15px;
-        margin-left: 0;
-    }
-    .head .allCate .iconfont{
-        font-size: 26px;
-        cursor: pointer;
-        position: relative;
-        left: 90px;
-        top: 5px;
-    }
-    .head .el-button{
-        font-size: 15px;
-        margin-left: 50px;
-        font-weight: 700;
-        color: #333;
-        position: relative;
-    }
-    .head .el-button:hover{
-        color: #409EFF;
+        .head{
+            width: 1190px;
+            margin: 0 auto;
+            height: 35px;
+            line-height: 35px;
+            .allCate{
+                display: inline-block;
+                box-sizing: border-box;
+                width: 210px;
+                color: #fff;
+                background-color: #409EFF;
+                padding-left: 15px;
+                font-size: 15px;
+                margin-left: 0;
+                .iconfont{
+                    font-size: 26px;
+                    cursor: pointer;
+                    position: relative;
+                    left: 90px;
+                    top: 5px;
+                }
+            }
+            .el-button{
+                font-size: 15px;
+                margin-left: 50px;
+                font-weight: 700;
+                color: #333;
+                position: relative;
+                &:hover{
+                    color: #409EFF;
+                }
+            }
+        }
     }
 </style>

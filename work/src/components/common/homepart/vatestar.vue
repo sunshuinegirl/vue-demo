@@ -57,119 +57,121 @@ export default {
     }
 </style>
 
-<style scoped>
+<style lang="less" scoped>
     .cate-con-item{
         height: 190px;
         padding: 0 10px;
         display: inline-block;
         position: relative;
         margin-bottom: 10px;
+        .cate-item{
+            display: block;
+            color: #333;
+            .cate-img{
+                width: 170px;
+                height: 96px;
+                display: block;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%
+                }
+            }
+            .cate-info{
+                margin-top: 12px;
+                max-width: 170px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                .shopname{
+                    max-width: 170px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    line-height: 18px;
+                    display: inline-table;
+                    cursor: pointer;
+                    .name-desc{
+                        display: inline-block;
+                        font-size: 16px;
+                        color: #333;
+                        max-width:120px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        margin-right: 5px;
+                        vertical-align: middle;
+                        line-height: 19px;
+                        padding-top: 1px;
+                        word-wrap: normal;
+                        white-space: nowrap;
+                        &:hover{
+                            color: #409EFF
+                        }
+                    }
+                    .shop-tag{
+                        width: 16px;
+                        height: 16px;
+                        display: inline-block;
+                        max-width: 100%;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        vertical-align: middle;
+                        .iconfont{
+                            font-size: 16px
+                        }
+                    }
+                    .shop-tag.order .iconfont{
+                        color: #67C23A;
+                    }
+                    .shop-tag.part .iconfont{
+                        color: #E6A23C;
+                    }
+                }
+                .star-info,.area-info,.price{
+                    font-size: 11px;
+                    color: #999;
+                    margin-top: 6px;
+                    line-height: 11px;
+                    height: 12px;
+                }
+                .star-info{
+                    .el-rate{
+                        float: left;
+                        width: 70px;
+                        vertical-align: middle;
+                        font-size: 12px;
+                        letter-spacing: -5px
+                    }
+                    .comment{
+                        margin-left:4px;
+                        vertical-align:middle;
+                        line-height:13px;
+                        white-space: nowrap;
+                        word-wrap: normal;
+                        text-overflow:ellipsis;
+                        overflow: hidden;
+                        height:12px;
+                        float: right;
+                    }
+                }
+                .area-info{
+                    span{
+                        display:inline-block;
+                        line-height:13px;
+                        width:50%;
+                        white-space: nowrap;
+                        word-wrap: normal;
+                        text-overflow:ellipsis;
+                        overflow:hidden;
+                    }
+                    span.main-name{
+                        float:left;
+                    }
+                    span.regin-name{
+                        float:right;
+                    }
+                }
+            }
+        }
     }
-    .cate-con-item .cate-item{
-        display: block;
-        color: #333;
-    }
-   .cate-con-item .cate-item .cate-img{
-       width: 170px;
-       height: 96px;
-       display: block;
-       cursor: pointer;
-   }
-   .cate-con-item .cate-item .cate-img img{
-       width: 100%;
-       height: 100%
-   }
-   .cate-con-item .cate-item .cate-info{
-        margin-top: 12px;
-        max-width: 170px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-   }
-   .cate-con-item .cate-item .cate-info .shopname{
-       max-width: 170px;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       vertical-align: middle;
-       line-height: 18px;
-       display: inline-table;
-       cursor: pointer;
-   }
-   .cate-con-item .cate-item .cate-info .shopname .name-desc{
-       display: inline-block;
-       font-size: 16px;
-       color: #333;
-       max-width:120px;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       margin-right: 5px;
-       vertical-align: middle;
-       line-height: 19px;
-       padding-top: 1px;
-       word-wrap: normal;
-       white-space: nowrap;
-   }
-   .cate-con-item .cate-item .cate-info .shopname .name-desc:hover{
-       color: #409EFF
-   }
-   .cate-con-item .cate-item .cate-info .shopname .shop-tag{
-       width: 16px;
-       height: 16px;
-       display: inline-block;
-       max-width: 100%;
-       text-overflow: ellipsis;
-       overflow: hidden;
-       vertical-align: middle;
-   }
-   .cate-con-item .cate-item .cate-info .shopname .shop-tag.order .iconfont{
-       color: #67C23A;
-   }
-   .cate-con-item .cate-item .cate-info .shopname .shop-tag.part .iconfont{
-       color: #E6A23C;
-   }
-   .cate-con-item .cate-item .cate-info .shopname .shop-tag .iconfont{
-       font-size: 16px
-   }
-   .cate-con-item .cate-item .cate-info .star-info,.area-info,.price{
-       font-size: 11px;
-       color: #999;
-       margin-top: 6px;
-       line-height: 11px;
-       height: 12px;
-   }
-   .cate-con-item .cate-item .cate-info .star-info .el-rate{
-       float: left;
-       display: inline-block;
-       width: 70px;
-       vertical-align: middle;
-       font-size: 12px;
-       letter-spacing: -5px
-   }
-   .cate-con-item .cate-item .cate-info .star-info .comment{
-       display:inline-block;
-       margin-left:4px;
-       vertical-align:middle;
-       line-height:13px;
-       white-space: nowrap;
-       word-wrap: normal;
-       text-overflow:ellipsis;
-       overflow: hidden;
-       height:12px;
-       float: right;
-   }
-   .cate-con-item .cate-item .cate-info .area-info span{
-        display:inline-block;
-        line-height:13px;
-       width:50%;
-        white-space: nowrap;
-        word-wrap: normal;
-        text-overflow:ellipsis;
-        overflow:hidden;
-   }
-   .cate-con-item .cate-item .cate-info .area-info span.main-name{
-       float:left;
-   }
-   .cate-con-item .cate-item .cate-info .area-info span.regin-name{
-       float:right;
-   }
 </style>
 
